@@ -24,7 +24,7 @@ function translate(x: number, y: number, z: number)
                     [0, 1, 0, y],
                     [0, 0, 1, z],
                     [0, 0, 0, 1]];
-    ctm = matrixMultiply(transMat, ctm);
+    ctm = matrixMultiply(ctm, transMat);
 }
 
 // multiply the current matrix by the scale
@@ -34,7 +34,7 @@ function scale(x: number, y: number, z: number)
                     [0, y, 0, 0],
                     [0, 0, z, 0],
                     [0, 0, 0, 1]];
-    ctm = matrixMultiply(scaleMat, ctm);
+    ctm = matrixMultiply(ctm, scaleMat);
 }
 
 // multiply the current matrix by the rotation
@@ -45,7 +45,7 @@ function rotateX(angle: number)
                    [0, Math.cos(deg), -Math.sin(deg), 0],
                    [0, Math.sin(deg), Math.cos(deg), 0],
                    [0, 0, 0, 1]];
-    ctm = matrixMultiply(rotxMat, ctm);
+    ctm = matrixMultiply(ctm, rotxMat);
 }
 
 // multiply the current matrix by the rotation
@@ -56,7 +56,7 @@ function rotateY(angle: number)
                    [0, 1, 0, 0],
                    [-Math.sin(deg), 0, Math.cos(deg), 0],
                    [0, 0, 0, 1]];
-    ctm = matrixMultiply(rotyMat, ctm);
+    ctm = matrixMultiply(ctm, rotyMat);
 }
 
 // multiply the current matrix by the rotation
@@ -67,7 +67,7 @@ function rotateZ(angle: number)
                    [Math.sin(deg), Math.cos(deg), 0, 0],
                    [0, 0, 1, 0],
                    [0, 0, 0, 1]];
-    ctm = matrixMultiply(rotzMat, ctm);
+    ctm = matrixMultiply(ctm, rotzMat);
 }
 
 // print the current matrix
